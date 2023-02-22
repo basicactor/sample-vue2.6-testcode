@@ -1,3 +1,3 @@
-import { mockRecipeApi } from "./apis/mockUserApi"
+import { mockUserApi } from "./apis/mockUserApi"
 
-export const handlers = [...Object.values(mockRecipeApi).map((i) => i())]
+export const handlers = [...Object.values(mockUserApi).map((i) => i())]

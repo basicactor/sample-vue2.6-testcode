@@ -1,11 +1,11 @@
-import { UserResult } from "@/models/user"
+import { UserCreateParam, UserEditParam, UserResult } from "@/models/user"
 import { postAsync } from "./ApiClient"
 
 export const requestUrl = {
   getList: "/users/list",
   getById: "/users/getById",
   create: "/users/create",
-  update: "/users/update",
+  edit: "/users/edit",
 }
 
 //リスト取得
@@ -19,20 +19,20 @@ const getItemByIdAsync = async () => {
 }
 
 //新規作成
-const createAsync = async () => {
-  return await postAsync<UserResult>(requestUrl.create, {})
+const createAsync = async (param: UserCreateParam) => {
+  return await postAsync(requestUrl.create, param)
 }
 
 //編集
-const updateAsync = async () => {
-  return await postAsync<UserResult>(requestUrl.update, {})
+const editAsync = async (param: UserEditParam) => {
+  return await postAsync(requestUrl.edit, param)
 }
 
 const userApi = {
   getListAsync,
   getItemByIdAsync,
   createAsync,
-  updateAsync,
+  editAsync,
 }
 
 export { userApi }

@@ -3,3 +3,7 @@ export type UserResult = {
   name: string
   email: string
 }
+
+export type UserCreateParam = Omit<UserResult, "id">
+
+export type UserEditParam = UserResult

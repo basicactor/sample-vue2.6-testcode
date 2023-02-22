@@ -1,5 +1,7 @@
 import axios, { AxiosInstance, AxiosRequestConfig, isAxiosError } from "axios"
 
+export const apiEndpoint = "/api/v1/"
+
 const client: AxiosInstance = axios.create({
   baseURL: "/",
   headers: { "Content-Type": "application/json" },
